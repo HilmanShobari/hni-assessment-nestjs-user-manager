@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  manager:
+    container_name: nestjs-hni-users-manager
+    build:
+      context: .
+    env_file:
+      - .env.local
+    ports:
+      - '3351:3351'
+    restart: always
