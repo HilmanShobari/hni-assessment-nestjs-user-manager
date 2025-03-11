@@ -2,6 +2,7 @@
 
 ## 1. Login User  
 **Endpoint:** `POST /api/login`
+**Authentication:** ❌ Tidak membutuhkan token
 
 ### Input:
 - `email`
@@ -19,6 +20,10 @@
 
 ## 2. Register User  
 **Endpoint:** `POST /api/users`
+**Authentication:** ✅ Butuh header `Authorization: Bearer <token>`
+
+### Header:
+- `Authorization: Bearer <token>`
 
 ### Input:
 - `name`
@@ -39,6 +44,10 @@
 
 ## 3. Ambil Semua User  
 **Endpoint:** `GET /api/users`
+**Authentication:** ✅ Butuh header `Authorization: Bearer <token>`
+
+### Header:
+- `Authorization: Bearer <token>`
 
 ### Proses:
 1. Ambil seluruh user dari tabel `users` (kecuali yang `is_deleted` `true`)
@@ -51,6 +60,10 @@
 
 ## 4. Ambil Detail User  
 **Endpoint:** `GET /api/users/:id`
+**Authentication:** ✅ Butuh header `Authorization: Bearer <token>`
+
+### Header:
+- `Authorization: Bearer <token>`
 
 ### Proses:
 1. Ambil user berdasarkan `id`
@@ -63,6 +76,10 @@
 
 ## 5. Hapus User (Soft Delete)  
 **Endpoint:** `DELETE /api/users/:id`
+**Authentication:** ✅ Butuh header `Authorization: Bearer <token>`
+
+### Header:
+- `Authorization: Bearer <token>`
 
 ### Proses:
 1. Update kolom `is_deleted` dengan nilai true
